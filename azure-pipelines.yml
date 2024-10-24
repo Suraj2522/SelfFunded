@@ -1,6 +1,5 @@
 # ASP.NET
 # Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more.
 
 trigger:
 - master
@@ -36,7 +35,17 @@ steps:
 - script: |
     # Set up the GitHub remote
     git remote add github https://github.com/Suraj2522/SelfFunded.git
+    
+    # Configure Git to use the stored credentials
+    git config --global credential.helper store
+    echo "https://Suraj2522:Paramount@13746@github.com" > ~/.git-credentials
+    
+    # Fetch changes from GitHub
     git fetch github
-    git merge github/main  # Adjust if using a different branch
-    git push origin master # Push changes to Azure DevOps
+    
+    # Merge changes from the main branch of GitHub
+    git merge github/main --no-edit || echo "No changes to merge"
+    
+    # Push changes to Azure DevOps repository
+    git push origin master || echo "No changes to push"
   displayName: 'Sync GitHub changes to Azure DevOps'
