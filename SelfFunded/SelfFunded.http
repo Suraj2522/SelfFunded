@@ -1,0 +1,6 @@
+@SelfFunded_HostAddress = http://localhost:5078
+
+GET {{SelfFunded_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
