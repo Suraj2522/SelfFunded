@@ -59,7 +59,7 @@ builder.Services.AddScoped<InvestigationReportDal>(provider =>
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = " SelfFunded API", Version = "v1" }); // Here, I've set the title to "Broker API"
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "SelfFunded  API", Version = "v1" }); // Here, I've set the title to "Broker API"
     c.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Menu API", Version = "v2" }); // Here, I've set the title to "Menu API"
     c.SwaggerDoc("v3", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Common API", Version = "v3" });
     c.SwaggerDoc("v4", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "User API", Version = "v4" });
